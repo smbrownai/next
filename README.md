@@ -15,8 +15,8 @@ Links will be added here as projects go live.
 
 | Project | Description | Status |
 |--------|-------------|--------|
-| Project One | Coming soon | 🔜 |
-| Project Two | Coming soon | 🔜 |
+| Hospital Census & Staffing Dashboard | Available Now | 🚀 |
+| Shopper Intervention ML System | Available now | 🚀 |
 | Project Three | Coming soon | 🔜 |
 
 
