@@ -15,9 +15,12 @@ Links will be added here as projects go live.
 
 | Project | Description | Status |
 |--------|-------------|--------|
-| Hospital Census & Staffing Dashboard | A 5-day census and staffing forecast tool that predicts daily patient volumes and nurse requirements for four hospital units, then assigns color-coded risk status based on predefined thresholds. | 🚀 |
+| Beatcheck Web | A bare-bones, self-hosted RSS reader with a Claude-powered AI pipeline that scores, clusters, and curates news for a single user. Built with FastAPI + HTMX + SQLite. | 🚀 |
 | Shopper Intervention ML System | An ML-powered intervention system that predicts at-risk e-commerce sessions and recommends timely promotions to recover lost sales, with a FastAPI backend, Streamlit dashboard, and MLflow-tracked model management. | 🚀 |
-| Project Three | Coming soon | 🔜 |
+| Tylenol Dosing Calculator | This calculator provides general dosing guidelines based on standard recommendations. Always consult with a healthcare provider before administering medication. | 🚀 |
+| Hospital Census & Staffing Dashboard | A 5-day census and staffing forecast tool that predicts daily patient volumes and nurse requirements for four hospital units, then assigns color-coded risk status based on predefined thresholds. | 🚀 |
+| DIGit | An AI-powered document analysis tool that uses Claude to break down content into Data, Information, and Guidance using the structured DIG framework. | 🚀 |
+| Next Project | Coming soon | 🔜 |
 
 
 ## License
