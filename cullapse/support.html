@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Support and updates · Cullapse</title>
+  <meta name="description" content="Cullapse is built by one person and provided as-is. This page explains how to send bug reports, what to expect, and the update philosophy." />
+  <link rel="icon" href="assets/logo/favicon.svg" />
+  <link rel="stylesheet" href="colors_and_type.css" />
+  <link rel="stylesheet" href="site.css" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+</head>
+<body>
+<div class="page">
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html"><span class="brand-mark">C</span><span>Cullapse</span></a>
+      <nav class="nav">
+        <a href="index.html#features">Features</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="cli.html">CLI</a>
+        <a href="ai.html">AI</a>
+        <a href="support.html" class="current">Support</a>
+        <span class="sep"></span>
+        <a class="btn btn-primary btn-sm" href="index.html#download">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <div class="page-header">
+        <span class="eyebrow">Support</span>
+        <h1>Support, updates, and what to expect.</h1>
+        <p class="lede">
+          Cullapse is built and maintained by one person.
+          There is no company, no support staff, no on-call rotation. The
+          app is provided <strong>as is</strong>. This page sets honest
+          expectations for what that means in practice.
+        </p>
+        <div class="meta"><span>Updated 2026-05-14</span><span>·</span><span>Version 1.0</span></div>
+      </div>
+
+      <article class="prose" style="max-width:72ch">
+
+        <h2 id="contact">Contact</h2>
+        <p>
+          One inbox covers everything:
+          <a href="mailto:dev@snxt.ai">dev@snxt.ai</a>. Bug reports,
+          feedback, questions about the app, licensing, privacy — they all
+          arrive in the same place.
+        </p>
+
+        <h2 id="response">What to expect when you write</h2>
+        <p>
+          I read every message. I do not commit to a response time and I
+          do not promise a reply on any particular schedule. If I can help
+          quickly, I will. If your message needs investigation, it may
+          take longer or it may not get a reply at all.
+        </p>
+        <p>
+          The most useful messages are the ones I can act on without a
+          back-and-forth. Bug reports especially benefit from including
+          the Cullapse version, your OS version, and the mail provider
+          involved.
+        </p>
+
+        <h2 id="scope">What I can help with</h2>
+        <ul>
+          <li>Bug reports — please include the version, OS version, and provider where relevant.</li>
+          <li>Feedback on the app's behavior, design, or copy.</li>
+          <li>Questions about how a feature is supposed to work.</li>
+          <li>Licensing and purchase questions (mostly handled by Apple's App Store, but I can answer Cullapse-specific things).</li>
+        </ul>
+
+        <h2 id="not-scope">What I cannot help with</h2>
+        <ul>
+          <li>Configuring your mail provider. Gmail app passwords, server hostnames, account suspensions, OAuth grants — those are between you and your provider.</li>
+          <li>Recovering deleted mail. Cullapse cannot restore messages your mail provider has already removed. See <a href="license.html#destructive">EULA §5</a>.</li>
+          <li>Custom development, private builds, or integrations with internal tools.</li>
+          <li>Anything outside the app itself. I cannot debug your network, your mail rules, or your inbox at large.</li>
+        </ul>
+
+        <h2 id="compatibility">Compatibility</h2>
+        <p>
+          Cullapse 1.0 targets macOS 14 (Sonoma) and later, and iOS 17 and
+          later. There is no formal support window — when a new major OS
+          ships, the current Cullapse continues to work on the previous
+          versions for as long as it does, and the next release may
+          require something newer.
+        </p>
+        <p>
+          The app has been used against Fastmail, iCloud Mail, Google
+          Workspace (with app-specific passwords), and generic IMAP
+          providers that implement RFC 3501 and TLS. Providers can change
+          behavior at any time. When that breaks something visible, I'll
+          fix it when I can.
+        </p>
+
+        <h2 id="updates">Update philosophy</h2>
+        <ul>
+          <li><strong>The privacy contract is permanent.</strong> No future release will read message bodies, send mail, fetch attachments, or ship inbox content to a server I operate. If that ever changes, the app has changed identity and you'll know.</li>
+          <li><strong>Small releases when they're ready.</strong> Cullapse ships updates when they exist. There is no roadmap, no release cadence, no schedule. New versions land when they are done.</li>
+          <li><strong>No beta program.</strong> What ships is what ships. I do not maintain a public TestFlight ring or pre-release channel.</li>
+          <li><strong>No timeline promises.</strong> A bug being reported does not commit me to fixing it on any particular schedule, or at all. I will if I can.</li>
+        </ul>
+
+        <h2 id="lifetime">What “lifetime” means</h2>
+        <div class="callout">
+          <div class="label">Definition</div>
+          <p>
+            “Lifetime” refers to the period during which I continue to
+            release updates for the then-current major version. It is not
+            a promise of perpetual access to every future major release.
+          </p>
+        </div>
+        <p>
+          When you buy Cullapse, you get the current version and any
+          updates I release for that major version. If a future major
+          version is significantly larger work, I may release it as a
+          separate paid app. I will say so clearly when that happens.
+          What I will not do is silently flip the app to a subscription.
+        </p>
+
+        <h2 id="refunds">Refunds</h2>
+        <p>
+          App Store refunds are handled by Apple. Use
+          <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>
+          within Apple's published refund window. I cannot issue refunds
+          for App Store purchases.
+        </p>
+
+        <h2 id="sla">No service-level commitment</h2>
+        <p>
+          Cullapse is a desktop and mobile application, not a hosted
+          service. There is no uptime SLA because there is no service to
+          keep up. If this website or the build pipeline goes down, the
+          app on your machine keeps working.
+        </p>
+
+      </article>
+    </div>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <div class="col"><a class="brand" href="index.html" style="margin-bottom:14px"><span class="brand-mark">C</span><span>Cullapse</span></a><p style="color:var(--fg-3); font-size:var(--fs-13); max-width:36ch; margin:0">An inbox triage instrument. Metadata only, local processing, one-time purchase.</p></div>
+      <div class="col"><h4>Product</h4><ul><li><a href="index.html#features">Features</a></li><li><a href="cli.html">Command line</a></li><li><a href="ai.html">AI processing</a></li><li><a href="support.html">Support</a></li></ul></div>
+      <div class="col"><h4>Trust</h4><ul><li><a href="privacy.html">Privacy policy</a></li><li><a href="security.html">Security</a></li><li><a href="opensource.html">Acknowledgments</a></li></ul></div>
+      <div class="col"><h4>Legal</h4><ul><li><a href="license.html">License (EULA)</a></li><li><a href="mailto:dev@snxt.ai">dev@snxt.ai</a></li></ul></div>
+      <div class="legal" style="grid-column: 1 / -1"><span>© 2026 Shawn M. Brown.</span><span>Mac App Store and the Apple logo are trademarks of Apple Inc.</span></div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
