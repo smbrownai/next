@@ -1,0 +1,159 @@
+<?xml version="1.0" standalone="yes"?>
+<!--
+  SherlockEQ Sparkle appcast.
+
+  Hosted at:  https://snxt.ai/appcast.xml
+  Updated by: dist/appcast-publish.sh on each release.
+
+  Sparkle reads <item> entries newest-first. New releases prepend a fresh
+  <item> above the previous ones; keep old entries indefinitely so users
+  on older versions can still see the changelog of what they're missing.
+-->
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     version="2.0">
+  <channel>
+    <title>SherlockEQ</title>
+    <link>https://snxt.ai/appcast.xml</link>
+    <description>Updates for SherlockEQ.</description>
+    <language>en</language>
+
+    <!-- NEW RELEASES GO BELOW THIS LINE -->
+
+    <item>
+      <title>SherlockEQ 0.1.0</title>
+      <pubDate>Mon, 08 Jun 2026 03:01:09 +0000</pubDate>
+      <sparkle:version>00100</sparkle:version>
+      <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.6</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+<!--
+  Release notes for SherlockEQ 0.1.0.
+
+  Authored as HTML so Sparkle's update dialog renders the formatting.
+  GitHub also accepts inline HTML in release notes via `gh release create
+  --notes-file`, so a single source covers both surfaces.
+-->
+
+<h2>SherlockEQ 0.1.0</h2>
+
+<p>
+  First public release. SherlockEQ is a per-ear audio equalizer for macOS,
+  useful for anyone who wants better control over how their Mac sounds —
+  not only listeners with hearing differences or tinnitus. It taps system
+  audio through Apple's native Core Audio Tap API. No virtual driver, no
+  kernel extension, no audio-routing setup. Use the master gain by itself,
+  or layer in audiogram-shaped curves, tinnitus notch filtering, AutoEQ
+  headphone correction, and dose tracking — as few or as many features as
+  you want.
+</p>
+
+<h3>What's in 0.1</h3>
+
+<p><strong>Equalization</strong></p>
+<ul>
+  <li>Independent left and right EQ chains, implemented as Direct Form II
+    Transposed biquad cascades. No AVAudioUnitEQ on the user-signal path —
+    real per-channel separation, not coupled stereo processing.</li>
+  <li>Four EQ modes per profile: Simple (bass / mid / treble shelves), Speech
+    (six speech-frequency bands with presets), Advanced (ten octave-spaced
+    parametric bands), and Expert (any band, any frequency, any filter type —
+    keyboard-driven).</li>
+  <li>AutoEQ headphone correction upstream of the profile EQ. Imports the
+    standard ParametricEQ.txt format.</li>
+  <li>Master output gain with a dedicated post-limiter stage (-60 dB to +24 dB)
+    and per-profile stereo balance.</li>
+</ul>
+
+<p><strong>Tinnitus</strong></p>
+<ul>
+  <li>Continuous-phase sine sweep across 20 Hz to 20 kHz, fine-tunable to
+    one hertz.</li>
+  <li>Per-ear notch filtering. Set the tone for the left ear, the right ear,
+    or both.</li>
+</ul>
+
+<p><strong>Audiogram</strong></p>
+<ul>
+  <li>Per-ear threshold entry on a log-frequency chart.</li>
+  <li>Translated into an EQ curve in real time with severity bars and a
+    live preview.</li>
+</ul>
+
+<p><strong>Safety</strong></p>
+<ul>
+  <li>NIOSH dose tracking with a remaining-time readout smoothed over short
+    transients (60-second EMA in the power domain).</li>
+  <li>Per-frequency safety overlay on the spectrum, calibration-aware.</li>
+  <li>Menu-bar dose tint and notifications at warning and danger thresholds.</li>
+  <li>Apple AUPeakLimiter on the output bus.</li>
+</ul>
+
+<p><strong>Workflow</strong></p>
+<ul>
+  <li>Menu-bar popover with master gain, balance, profile picker, level
+    meters, and a reference-mode bypass.</li>
+  <li>Main window with profile management, audiogram entry, four EQ surfaces,
+    tinnitus tone finder, safe listening dashboard, and a persistent
+    right-side monitor sidebar.</li>
+  <li>Profile import and export. Undo and redo with per-band coalescing.</li>
+  <li>Built-in profiles cannot be edited; duplicate to customize.</li>
+  <li>Device auto-switch when a profile is linked to an output.</li>
+</ul>
+
+<p><strong>Accessibility</strong></p>
+<ul>
+  <li>VoiceOver and keyboard control across every custom canvas and drag
+    surface, including audiogram entry, EQ band sliders, and the tinnitus
+    sweep.</li>
+  <li>Color-blind redundant encoding on safety zones (icon plus position,
+    not just color).</li>
+  <li>Reduced-motion guards on transitions. Dynamic Type respected on
+    labels.</li>
+</ul>
+
+<h3>What's not in 0.1</h3>
+
+<ul>
+  <li><strong>Onboarding wizard.</strong> First launch goes straight to the
+    main UI; you will be prompted for Microphone and Screen &amp; System
+    Audio Recording permissions cold. The second prompt is non-obvious —
+    macOS requires it for any system-audio capture. SherlockEQ does not
+    record video or screen contents.</li>
+  <li><strong>Localization beyond English.</strong> The String Catalog
+    infrastructure is in place; translations are not yet wired.</li>
+  <li><strong>Spectrogram visualization.</strong> Code is present but
+    disabled pending a performance and UX revision.</li>
+</ul>
+
+<h3>Requirements</h3>
+
+<ul>
+  <li>macOS 14.6 or later</li>
+  <li>Apple Silicon or Intel (universal binary)</li>
+  <li>Microphone permission and Screen &amp; System Audio Recording permission</li>
+</ul>
+
+<h3>Not a medical device</h3>
+
+<p>
+  SherlockEQ is not a healthcare or medical application. It does not diagnose,
+  treat, measure, or monitor any hearing condition, tinnitus, or disability.
+  For concerns about your hearing, consult a doctor, audiologist, or licensed
+  healthcare professional.
+</p>
+
+<h3>Acknowledgments</h3>
+
+<p>
+  NIOSH dose math. Audio EQ Cookbook (Robert Bristow-Johnson) for biquad
+  coefficients. AutoEQ project, oratory1990, and Crinacle for headphone
+  correction profiles.
+</p>
+]]></description>
+      <enclosure url="https://github.com/smbrownai/SherlockEQ/releases/download/v0.1.0/SherlockEQ-0.1.0.dmg"
+                 type="application/octet-stream"
+                 sparkle:edSignature="MiU4TLsCrh4y0XySbW5+kzV959n1aLx+TTaZyUw33HUx9Q9qEwzTs6Ho/5XY4PlbIqFMKrVnJvR6ck4EaNNfDQ==" length="5956334" />
+    </item>
+  </channel>
+</rss>
