@@ -7,7 +7,8 @@ This repository powers the main landing page for my AI work. It serves as a cent
 ## Structure
 ```
 next/
-└── index.html   # Main landing page
+├── index.html   # Main landing page
+└── SherlockEQ/  # SherlockEQ project site
 ```
 
 ## Projects
@@ -21,6 +22,7 @@ Links will be added here as projects go live.
 | Tylenol Dosing Calculator | This calculator provides general dosing guidelines based on standard recommendations. Always consult with a healthcare provider before administering medication. | 🚀 |
 | Hospital Census & Staffing Dashboard | A 5-day census and staffing forecast tool that predicts daily patient volumes and nurse requirements for four hospital units, then assigns color-coded risk status based on predefined thresholds. | 🚀 |
 | DIGit | An AI-powered document analysis tool that uses Claude to break down content into Data, Information, and Guidance using the structured DIG framework. | 🚀 |
+| SherlockEQ | macOS doesn't ship a per-ear parametric EQ. SherlockEQ is one. It taps system audio, splits the chain by ear, and gives you the controls to investigate a tinnitus tone, shape an audiogram into compensation, and refine sound to taste. No virtual driver. No kernel extension. No paywall. | 🔜 |
 | Next Project | Coming soon | 🔜 |
 
 
