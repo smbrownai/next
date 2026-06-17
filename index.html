@@ -63,7 +63,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      max-width: 700px;
+      max-width: 1000px;
       margin: 0 auto;
       padding: 100px 32px 80px;
       width: 100%;
@@ -150,11 +150,49 @@
       margin-bottom: 20px;
     }
 
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .projects-column {
+      display: flex;
+      flex-direction: column;
+    }
+
     .projects {
       display: flex;
       flex-direction: column;
       gap: 10px;
     }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 1px;
+    }
+
+    .status::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .status.active { color: #2d7d46; }
+    .status.active::before { background: #2d7d46; }
+
+    .status.archived { color: var(--muted); }
+    .status.archived::before { background: var(--border); }
 
     .project-link {
       display: flex;
@@ -229,6 +267,10 @@
       font-weight: 300;
     }
 
+    @media (max-width: 720px) {
+      .projects-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+
     @media (max-width: 520px) {
       main { padding: 80px 24px 60px; }
       header { flex-direction: column; gap: 20px; }
@@ -251,75 +293,102 @@
 
     <div class="divider"></div>
 
-    <p class="section-label">Projects</p>
+    <div class="projects-grid">
 
-    <div class="projects">
+      <div class="projects-column">
+        <p class="section-label">Production Projects</p>
+        <div class="projects">
 
-      <!-- To activate a project: set href, remove class "soon", swap badge for arrow ↗ -->
+          <a href="SherlockEQ/index.html" class="project-link">
+            <div class="project-info">
+              <span class="project-name">SherlockEQ</span>
+              <span class="status active">Active</span>
+              <span class="project-desc">macOS doesn’t ship a per-ear parametric EQ. SherlockEQ is one. It taps system audio, splits the chain by ear, and gives you the controls to investigate a tinnitus tone, shape an audiogram into compensation, and refine sound to taste. No virtual driver. No kernel extension. No paywall.</span>
+            </div>
+            <span class="arrow">↗</span>
+          </a>
 
-      <a href="SherlockEQ/index.html" class="project-link">
-        <div class="project-info">
-          <span class="project-name">SherlockEQ</span>
-          <span class="project-desc">macOS doesn't ship a per-ear parametric EQ. SherlockEQ is one. It taps system audio, splits the chain by ear, and gives you the controls to investigate a tinnitus tone, shape an audiogram into compensation, and refine sound to taste. No virtual driver. No kernel extension. No paywall.</span>
-        </div>
-        <span class="arrow">↗</span>
-      </a>
+          <a href="/cullapse/" class="project-link soon">
+            <div class="project-info">
+              <span class="project-name">File13</span>
+              <span class="status active">Active</span>
+              <span class="project-desc">File13 is an inbox triage tool — not an email client. It connects to your existing accounts, fetches only headers, and never touches a server we own. No account creation. No subscriptions. No ads. No tracking. No investors — which means no one is pressuring us to monetize your attention, harvest your data, or grow at your expense. We answer to you, and only you. Processing is local. Privacy is the whole point.</span>
+            </div>
+            <span class="badge">Soon</span>
+          </a>
 
-      <a href="/cullapse/" class="project-link soon">
-        <div class="project-info">
-          <span class="project-name">Cullapse</span>
-          <span class="project-desc">Cullapse is an inbox triage tool — not an email client. It connects to your existing accounts, fetches only headers, and never touches a server we own. No account creation. No subscriptions. No ads. No tracking. No investors — which means no one is pressuring us to monetize your attention, harvest your data, or grow at your expense. We answer to you, and only you. Processing is local. Privacy is the whole point.</span>
-        </div>
-        <span class="badge">Soon</span>
-      </a>
+          <a href="https://github.com/smbrownai/beatcheck_web" class="project-link">
+            <div class="project-info">
+              <span class="project-name">BeatCheck Web</span>
+              <span class="status active">Active</span>
+              <span class="project-desc">A bare-bones, self-hosted RSS reader with a Claude-powered AI pipeline that scores, clusters, and curates news for a single user. Built with FastAPI + HTMX + SQLite. Designed to become an agentic tool for turning news into newsletters, websites, podcasts, or other outputs over time. Inspired by and partially derived from Leo Laporte’s BeatCheck.</span>
+            </div>
+            <span class="arrow">↗</span>
+          </a>
 
-      <a href="https://github.com/smbrownai/beatcheck_web" class="project-link">
-        <div class="project-info">
-          <span class="project-name">BeatCheck Web</span>
-          <span class="project-desc">A bare-bones, self-hosted RSS reader with a Claude-powered AI pipeline that scores, clusters, and curates news for a single user. Built with FastAPI + HTMX + SQLite. Designed to become an agentic tool for turning news into newsletters, websites, podcasts, or other outputs over time. Inspired by and partially derived from Leo Laporte's BeatCheck.</span>
-        </div>
-        <span class="arrow">↗</span>
-      </a>
-      
-      <a href="https://github.com/smbrownai/shopper_intervention" class="project-link">
-        <div class="project-info">
-          <span class="project-name">Shopper Intervention ML System</span>
-          <span class="project-desc">An end-to-end machine learning system that predicts which e-commerce sessions are unlikely to convert, enabling timely promotional interventions to recover potential lost sales. Features a FastAPI backend trained on 12,000+ sessions with champion/challenger model selection, a Streamlit dashboard for interactive scoring and analysis, and automated retraining with MLflow experiment tracking.</span>
-        </div>
-        <span class="arrow">↗</span>
-      </a>
+          <a href="#" class="project-link soon">
+            <div class="project-info">
+              <span class="project-name">Foretap</span>
+              <span class="status archived">Archived</span>
+              <span class="project-desc">Coming soon</span>
+            </div>
+            <span class="badge">Soon</span>
+          </a>
 
-      <a href="https://smbrownai.github.io/tylenol-dosing-calc/" class="project-link">
-        <div class="project-info">
-          <span class="project-name">Tylenol Dosing Calculator</span>
-          <span class="project-desc">This calculator provides general dosing guidelines based on standard recommendations. Always consult with a healthcare provider before administering medication.</span>
-        </div>
-        <span class="arrow">↗</span>
-      </a>
-      
-      <a href="https://claude.ai/public/artifacts/ae73bd5d-0121-45c3-854f-b1de73f9022e" class="project-link">
-        <div class="project-info">
-          <span class="project-name">Hospital Census & Staffing Dashboard</span>
-          <span class="project-desc">The dataset is an Excel workbook with one month of census and nurse staffing data for four hospital units (MedSurg, ICU, NICU, and ED Observation). It includes a daily unit-level summary tab, an hourly census tab, and a “Mitigation Playbook” tab that defines the Red/Yellow/Green thresholds, mitigation actions, and planned staffing by day of week. Using these inputs, the requested output is a 5-day forecast tool that predicts each unit’s average daily census and related nurse staffing needs, then assigns census, staffing, and overall (worst-case) color status per unit—and reports the predicted 5-day census and color coding for each unit.</span>
-        </div>
-        <span class="arrow">↗</span>
-      </a>
+          <a href="#" class="project-link soon">
+            <div class="project-info">
+              <span class="project-name">Tipease</span>
+              <span class="status active">Active</span>
+              <span class="project-desc">Coming soon</span>
+            </div>
+            <span class="badge">Soon</span>
+          </a>
 
-      <a href="https://smbrownai.github.io/DIGit/" class="project-link">
-        <div class="project-info">
-          <span class="project-name">DIGit</span>
-          <span class="project-desc">An AI-powered document analysis tool that uses Claude to break down content into Data, Information, and Guidance using the structured DIG framework.</span>
         </div>
-        <span class="arrow">↗</span>
-      </a>
-      
-      <a href="#" class="project-link soon">
-        <div class="project-info">
-          <span class="project-name">Next Project</span>
-          <span class="project-desc">Brief description of what this project does</span>
+      </div>
+
+      <div class="projects-column">
+        <p class="section-label">Class Projects</p>
+        <div class="projects">
+
+          <a href="https://github.com/smbrownai/shopper_intervention" class="project-link">
+            <div class="project-info">
+              <span class="project-name">Shopper Intervention ML System</span>
+              <span class="status archived">Archived</span>
+              <span class="project-desc">An end-to-end machine learning system that predicts which e-commerce sessions are unlikely to convert, enabling timely promotional interventions to recover potential lost sales. Features a FastAPI backend trained on 12,000+ sessions with champion/challenger model selection, a Streamlit dashboard for interactive scoring and analysis, and automated retraining with MLflow experiment tracking.</span>
+            </div>
+            <span class="arrow">↗</span>
+          </a>
+
+          <a href="https://smbrownai.github.io/tylenol-dosing-calc/" class="project-link">
+            <div class="project-info">
+              <span class="project-name">Tylenol Dosing Calculator</span>
+              <span class="status archived">Archived</span>
+              <span class="project-desc">This calculator provides general dosing guidelines based on standard recommendations. Always consult with a healthcare provider before administering medication.</span>
+            </div>
+            <span class="arrow">↗</span>
+          </a>
+
+          <a href="https://claude.ai/public/artifacts/ae73bd5d-0121-45c3-854f-b1de73f9022e" class="project-link">
+            <div class="project-info">
+              <span class="project-name">Hospital Census & Staffing Dashboard</span>
+              <span class="status archived">Archived</span>
+              <span class="project-desc">The dataset is an Excel workbook with one month of census and nurse staffing data for four hospital units (MedSurg, ICU, NICU, and ED Observation). It includes a daily unit-level summary tab, an hourly census tab, and a “Mitigation Playbook” tab that defines the Red/Yellow/Green thresholds, mitigation actions, and planned staffing by day of week. Using these inputs, the requested output is a 5-day forecast tool that predicts each unit’s average daily census and related nurse staffing needs, then assigns census, staffing, and overall (worst-case) color status per unit—and reports the predicted 5-day census and color coding for each unit.</span>
+            </div>
+            <span class="arrow">↗</span>
+          </a>
+
+          <a href="https://smbrownai.github.io/DIGit/" class="project-link">
+            <div class="project-info">
+              <span class="project-name">DIGit</span>
+              <span class="status archived">Archived</span>
+              <span class="project-desc">An AI-powered document analysis tool that uses Claude to break down content into Data, Information, and Guidance using the structured DIG framework.</span>
+            </div>
+            <span class="arrow">↗</span>
+          </a>
+
         </div>
-        <span class="badge">Soon</span>
-      </a>
+      </div>
 
     </div>
   </main>
